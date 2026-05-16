@@ -1,0 +1,224 @@
+/* ══════════════════════════════════════════════════════════
+       ABOUT SECTION — Scoped classes (prefix: abx-)
+    ══════════════════════════════════════════════════════════ */
+.abx-outer-size {
+    padding: 60px 0px 0px 0px;
+}
+
+/* Outer wrapper — حدود جانبية رفيعة يمين ويسار */
+.abx-outer {
+    width: 100%;
+    position: relative;
+    margin: 30px 0;
+}
+
+/* الصف الرئيسي — عمودان جنباً إلى جنب */
+.abx-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+}
+
+/* ── العمود الأيسر: الصورة (50%) ── */
+.abx-col-left {
+    position: relative;
+    width: 50%;
+    flex-shrink: 0;
+    /* overflow: hidden; */
+    /* border-right: 1px solid var(--ftr-panel-border); */
+    /* الخط الفاصل */
+}
+
+/* مكان-holder للصورة — ضع صورتك هنا */
+.abx-portrait {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--bg-card-dark); */
+    /* #1a1a24 — placeholder */
+    display: block;
+    object-fit: cover;
+}
+
+.abx-portrait img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+/* ── العمود الأيمن: المحتوى (50%) ── */
+.abx-col-right {
+    width: 50%;
+    margin: 15px;
+
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* background: var(--bg-dark); */
+    /* #0f0f12 */
+}
+
+/*
+    */
+.abx-heading-wrap {
+    position: relative;
+    padding-top: 0.04em;
+    line-height: 1;
+    overflow: visible;
+    z-index: 10;
+}
+
+.abx-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-white);
+    /* #ffffff */
+    line-height: 0.88;
+    /* letter-spacing: -0.01em; */
+    white-space: nowrap;
+    /* font-size: clamp(3rem, 11vw, 6rem); */
+}
+
+/* Spacer — يدفع النص والأيقونات للنصف السفلي */
+.abx-spacer {
+    flex: 0.5;
+}
+
+
+.abx-body-text {
+    font-family: var(--font-main);
+    /* Urbanist */
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.05vw, 1rem);
+    line-height: 1.72;
+    color: var(--text-white);
+    /* #ffffff */
+    max-width: 620px;
+    padding: 20px;
+}
+
+/* ── الأيقونات الاجتماعية ── */
+.abx-social-wrap {
+    padding: 1.6rem 2.6rem 3.2rem 2.6rem;
+}
+
+.abx-social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.abx-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 1.55rem;
+    line-height: 1;
+    transition: opacity var(--transition-fast);
+}
+
+.abx-social-link:hover {
+    opacity: 0.6;
+    color: var(--blue-primary);
+    /* #1a73e8 — hover accent من style.css */
+}
+
+/* ══════════════════════════════════════════════════════════
+       RESPONSIVE — min-width فقط، لا يوجد max-width
+    ══════════════════════════════════════════════════════════ */
+
+
+@media (min-width: 768px) {
+
+
+    .abx-social-wrap {
+        padding: 1.6rem 3rem 3.5rem 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+
+    .abx-body-text {
+        font-size: clamp(0.85rem, 1vw, 1rem);
+    }
+
+    .abx-social-wrap {
+        padding: 1.8rem 3.2rem 4rem 3.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .abx-heading-wrap {
+        margin-left: -0.5em;
+    }
+
+    .abx-body-text {
+        font-size: 1.3rem;
+        line-height: 1.74;
+    }
+
+    .abx-social-link {
+        font-size: 1.7rem;
+    }
+
+    .abx-social-list {
+        gap: 2.6rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .abx-heading {
+        font-size: clamp(6rem, 14vw, 5rem);
+    }
+
+    .abx-body-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .abx-row {
+        flex-wrap: wrap;
+    }
+
+    .abx-col-left,
+    .abx-col-right {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .abx-portrait {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .abx-portrait img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .abx-body-text {
+        padding: 20px 16px;
+        max-width: 100%;
+    }
+
+    .hwm-cards-container {
+        padding: 0 16px;
+    }
+}

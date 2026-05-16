@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════════════
+   Back to Top Button — Project-matched styles
+   Matches lang-toggle/CTA design: blue pill, gradient hover, RTL support
+   ═══════════════════════════════════════════════════════════════ */
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(26, 115, 232, 0.15);
+  border: 2px solid rgba(26, 115, 232, 0.4);
+  color: #fff;
+  font-family: "Barlow", "Cairo", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(26, 115, 232, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+#backToTop:hover {
+  background: linear-gradient(135deg, rgba(26, 115, 232, 0.35) 0%, rgba(115, 151, 233, 0.25) 100%);
+  border-color: #1a73e8;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 40px rgba(26, 115, 232, 0.35);
+  color: #fff;
+}
+
+#backToTop:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Text content — bilingual */
+#backToTop span {
+  font-size: 10px;
+  line-height: 1;
+}
+
+#backToTop .icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* RTL Support */
+html[dir="rtl"] #backToTop {
+  right: auto;
+  left: 30px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+  }
+  
+  html[dir="rtl"] #backToTop {
+    left: 20px;
+  }
+  
+  #backToTop span {
+    font-size: 9px;
+  }
+  
+  #backToTop .icon {
+    font-size: 16px;
+  }
+}
+
+/* Focus for accessibility */
+#backToTop:focus {
+  outline: 2px solid #1a73e8;
+  outline-offset: 4px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  #backToTop {
+    border-width: 3px;
+    background: rgba(26, 115, 232, 0.3);
+  }
+}

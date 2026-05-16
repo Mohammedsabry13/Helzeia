@@ -1,0 +1,472 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   style-ar.css — Helzeia Project (Arabic / RTL Overrides)
+   ────────────────────────────────────────────────────────────────────────────
+   This file contains ONLY Arabic-specific overrides.
+   It must be loaded AFTER style.css on all Arabic pages.
+
+   TABLE OF CONTENTS
+   01. ARABIC FONT TOKENS
+   02. BODY & TYPOGRAPHY RTL
+   03. NAVIGATION RTL
+   04. HERO SECTION RTL
+   05. MOBILE DRAWER RTL
+   06. FOOTER RTL
+   07. FAQ / ACCORDION RTL
+   08. GENERAL LAYOUT RTL
+   09. CTA BUTTON RTL
+   10. HWM CARDS SECTION RTL (Service Detail Pages)
+   11. LANGUAGE TOGGLE RTL
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════════════════════
+   01. ARABIC FONT TOKENS
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --font-main: "Cairo", sans-serif;
+  --font-display: "Cairo", sans-serif;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   02. BODY & TYPOGRAPHY RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] body {
+  font-family: "Cairo", sans-serif;
+}
+
+html[dir="rtl"] .logo-text,
+html[dir="rtl"] .drawer-logo,
+html[dir="rtl"] .main-nav ul li a,
+html[dir="rtl"] .drawer-nav a,
+html[dir="rtl"] .contact-btn,
+html[dir="rtl"] .try-btn,
+html[dir="rtl"] .hero-content .subtitle,
+html[dir="rtl"] .hero-content h1,
+html[dir="rtl"] .acc-question-text,
+html[dir="rtl"] .card-title {
+  font-family: "Cairo", sans-serif;
+}
+
+html[dir="rtl"] h1 {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .hero-content .subtitle {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-heading {
+  text-align: right;
+}
+
+html[dir="rtl"] .chatbotHeading,
+html[dir="rtl"] .center .subtitle {
+  text-align: center;
+}
+
+html[dir="rtl"] .feature-card {
+  text-align: center;
+}
+
+html[dir="rtl"] .cfs-heading-main {
+  text-align: center;
+}
+
+.chatbotHeading {
+  font-size: 50px;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   03. NAVIGATION RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .main-nav ul {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .main-nav ul li a.active::after {
+  left: 20px;
+  right: 20px;
+}
+
+html[dir="rtl"] .main-nav ul.nav-dropdown {
+  flex-direction: column !important;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+html[dir="rtl"] .owl-nav {
+  right: auto;
+  left: 40px;
+}
+
+/* ── Nav Logo RTL Order ── */
+html[dir="rtl"] .nav-logo {
+  order: 2;
+}
+
+html[dir="rtl"] .main-nav {
+  order: 1;
+}
+
+html[dir="rtl"] .menu-toggle-btn {
+  order: 0;
+}
+
+/* ── Nav Language Wrap RTL ── */
+html[dir="rtl"] .nav-lang-wrap {
+  order: -1;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   04. HERO SECTION RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .hero-shape-right {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .hero-slide.active .hero-shape-right {
+  transform: scaleX(-1) translateX(0);
+}
+
+html[dir="rtl"] .hero-round {
+  left: auto;
+  right: 50px;
+}
+
+/* ── Contact Button RTL ── */
+html[dir="rtl"] .contact-btn {
+  letter-spacing: 0;
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .contact-btn svg {
+  transform: scaleX(-1);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   05. MOBILE DRAWER RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .drawer-panel {
+  transform: translateX(100%);
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .mobile-menu-drawer.open .drawer-panel {
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .drawer-head {
+  flex-direction: row-reverse;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   06. FOOTER RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .slyn-layout-row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .slyn-nav-grid {
+  direction: rtl;
+}
+
+html[dir="rtl"] .slyn-card-bottom {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .slyn-watermark {
+  left: auto;
+}
+
+html[dir="rtl"] .slyn-nav-col__list {
+  padding-right: 0;
+}
+
+/* ── CTA Button RTL (footer) ── */
+.slyn-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #7397e9 0.49%, #3d4455 48.33%, #eff7fb 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 0 10px 0px;
+  gap: 70px;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: 220px;
+  transition: opacity var(--transition-fast);
+  justify-content: space-around;
+  align-content: center;
+}
+
+html[dir="rtl"] .slyn-cta-btn__arrow svg {
+  transform: scaleX(-1);
+  justify-content: space-around;
+  align-content: center;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   07. FAQ / ACCORDION RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .flex-between {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .acc-header {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .acc-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   08. GENERAL LAYOUT RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .badge {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .btn-arrow {
+  display: inline-block;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   09. CTA BUTTON RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .slyn-cta-btn__arrow svg {
+  transform: scaleX(-1);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   10. HWM CARDS SECTION RTL (Service Detail Pages)
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Card content — RTL text alignment */
+html[dir="rtl"] .hwm-card-content {
+  padding: 12px 48px 12px 0;
+  text-align: right;
+}
+
+/* Card tag — keep number in LTR but align right */
+html[dir="rtl"] .hwm-card-tag {
+  font-family: "Cairo", sans-serif;
+  letter-spacing: 1px;
+  direction: ltr;
+  text-align: right;
+}
+
+/* Card title — Cairo font, no letter-spacing */
+html[dir="rtl"] .hwm-card-title {
+  font-family: "Cairo", sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* Card text — Cairo font, push to right */
+html[dir="rtl"] .hwm-card-text {
+  font-family: "Cairo", sans-serif;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.62);
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Card badge — RTL flex */
+html[dir="rtl"] .hwm-card-badge {
+  font-family: "Cairo", sans-serif;
+  flex-direction: row-reverse;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Alternating cards — RTL layout */
+html[dir="rtl"] .hwm-card--alt .hwm-card-content {
+  padding: 12px 0 12px 48px;
+  text-align: right;
+}
+
+html[dir="rtl"] .hwm-card--alt .hwm-card-text {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* ── Responsive RTL Cards ── */
+@media (max-width: 767px) {
+
+  html[dir="rtl"] .hwm-card-content,
+  html[dir="rtl"] .hwm-card--alt .hwm-card-content {
+    padding: 0;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .hwm-card-text {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  html[dir="rtl"] .hwm-card-badge {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  html[dir="rtl"] .hwm-card-content {
+    padding: 8px 32px 8px 0;
+  }
+
+  html[dir="rtl"] .hwm-card--alt .hwm-card-content {
+    padding: 8px 0 8px 32px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   11. LANGUAGE TOGGLE RTL
+   ──────────────────────────────────────────────────────────────────────────── */
+
+html[dir="rtl"] .lang-toggle {
+  font-family: "Cairo", "Barlow", sans-serif;
+  letter-spacing: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   12. ABOUT PAGE RTL OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Hero padding adjustment for RTL */
+html[dir="rtl"] .abus-hero {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+/* Section tag — no letter-spacing in Arabic */
+html[dir="rtl"] .abus-section-tag {
+  letter-spacing: 0;
+  font-family: "Cairo", sans-serif;
+}
+
+/* Section title — Cairo font */
+html[dir="rtl"] .abus-section-title {
+  font-family: "Cairo", sans-serif;
+  letter-spacing: 0;
+}
+
+/* Commitment glow — flip to left */
+html[dir="rtl"] .abus-commitment::before {
+  right: auto;
+  left: -80px;
+}
+
+/* Commit card — right-aligned text, reversed gradient */
+html[dir="rtl"] .abus-commit-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .abus-commit-card::before {
+  background: linear-gradient(90deg, transparent, var(--blue-primary));
+}
+
+/* Commit icon — push to right */
+html[dir="rtl"] .abus-commit-icon {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .abus-commit-title {
+  font-family: "Cairo", sans-serif;
+}
+
+html[dir="rtl"] .abus-commit-text {
+  font-family: "Cairo", sans-serif;
+}
+
+/* Story grid — RTL column order */
+html[dir="rtl"] .abus-story-grid {
+  direction: rtl;
+}
+
+/* Story badge — flip to left side */
+html[dir="rtl"] .abus-story-badge {
+  right: auto;
+  left: -20px;
+}
+
+html[dir="rtl"] .abus-story-badge-label {
+  font-family: "Cairo", sans-serif;
+  letter-spacing: 0;
+}
+
+/* Story quote — border on right side */
+html[dir="rtl"] .abus-story-quote {
+  border-left: 1px solid rgba(26, 115, 232, 0.18);
+  border-right: 3px solid var(--blue-primary);
+  border-radius: 12px 0 0 12px;
+  font-style: normal;
+  font-family: "Cairo", sans-serif;
+}
+
+/* Story text column right-aligned */
+html[dir="rtl"] .abus-story-text-col {
+  text-align: right;
+}
+
+/* About hero text direction */
+html[dir="rtl"] .abus-hero .abus-text {
+  text-align: right;
+}
+
+html[dir="rtl"] .abus-hero .abus-eyebrow,
+html[dir="rtl"] .abus-hero .abus-title,
+html[dir="rtl"] .abus-hero .abus-body {
+  text-align: right;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   13. CONTACT PAGE RTL OVERRIDES
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Input field direction in RTL */
+html[dir="rtl"] .cu-text-input {
+  direction: rtl;
+  text-align: right;
+  padding: 12px 14px 12px 40px;
+}
+
+/* Responsive RTL about page */
+@media (max-width: 991px) {
+  html[dir="rtl"] .abus-story-badge {
+    left: 10px;
+    right: auto;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  html[dir="rtl"] .abus-hero .abus-text {
+    text-align: center;
+    align-items: center;
+  }
+}

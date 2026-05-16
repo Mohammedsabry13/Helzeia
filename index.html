@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helzeia</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/back-to-top.css">
+    <link rel="icon" href="assets/image/My-Logo.png" />
+    <style>
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 16px;
+            background: rgba(26, 115, 232, 0.15);
+            border: 1.5px solid rgba(26, 115, 232, 0.4);
+            border-radius: 999px;
+            cursor: pointer;
+            color: #fff;
+            font-family: "Barlow", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(26, 115, 232, 0.35);
+            border-color: #1a73e8;
+            color: #fff;
+        }
+
+        .nav-lang-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ══ Preloader ══ */
+        @keyframes rotate-loading {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99999;
+            background-color: #0b0f1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .preloader .loading-container,
+        .preloader .loading {
+            height: 120px;
+            width: 120px;
+            position: relative;
+            border-radius: 100%;
+        }
+
+        .preloader .loading-container {
+            margin: 0 auto;
+        }
+
+        .preloader .loading {
+            border: 2px solid transparent;
+            border-color: transparent #4e7fff transparent #4e7fff;
+            animation: rotate-loading 1.5s linear 0s infinite normal;
+            transform-origin: 50% 50%;
+        }
+
+        .preloader #loading-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .preloader #loading-icon img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ══════════════════════════════════════════════════════════════════════
+         PRELOADER
+    ══════════════════════════════════════════════════════════════════════ -->
+    <div class="preloader" id="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon">
+                <img src="assets/image/My-Logo.png" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         MAIN NAVIGATION
+    ══════════════════════════════════════════════════════════════════════ -->
+    <nav class="header-menu-area" id="main-nav">
+        <div class="nav-inner">
+            <!-- LOGO -->
+            <a class="nav-logo" href="/">
+                <img src="assets/image/My-Logo.png" alt="Helzeia" class="nav-logo__img" />
+            </a>
+
+            <!-- DESKTOP NAV -->
+            <div class="main-nav" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about-us-en.html">ABOUT</a></li>
+
+                    <!-- SERVICES DROPDOWN -->
+                    <li class="has-dropdown">
+                        <a href="services.html" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                            SERVICES
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a href="programing-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-code"></i></span><span
+                                        class="dd-text"><strong>Programing</strong><small>Web & Desktop
+                                            Applications</small></span></a></li>
+                            <li role="none"><a href="mobile-app-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-mobile-screen"></i></span><span
+                                        class="dd-text"><strong>Mobile App</strong><small>Impactful
+                                            applications</small></span></a></li>
+                            <li role="none"><a href="web-design-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-pen-nib"></i></span><span class="dd-text"><strong>Web
+                                            Design</strong><small>World-class websites</small></span></a></li>
+                            <li role="none"><a href="hosting-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-server"></i></span><span
+                                        class="dd-text"><strong>Hosting</strong><small>Powerful & high
+                                            performance</small></span></a></li>
+                            <li role="none"><a href="mail-support-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-envelope"></i></span><span class="dd-text"><strong>Mail
+                                            Support</strong><small>Mail hosting & support</small></span></a></li>
+                            <li role="none"><a href="startup-package-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-rocket"></i></span><span class="dd-text"><strong>Startup
+                                            Package</strong><small>Website, email & hosting</small></span></a></li>
+                            <li role="none"><a href="software-support-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-headset"></i></span><span class="dd-text"><strong>Full IT
+                                            Support</strong><small>Fast & accurate solutions</small></span></a></li>
+                            <li role="none"><a href="remote-app-en.html" role="menuitem"><span class="dd-icon"><i
+                                            class="fa-solid fa-cloud"></i></span><span class="dd-text"><strong>Remote
+                                            App</strong><small>Access from anywhere</small></span></a></li>
+                            <li role="none"><a href="hardware-maintenance-en.html" role="menuitem"><span
+                                        class="dd-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><span
+                                        class="dd-text"><strong>Hardware Maintenance</strong><small>Component repair &
+                                            support</small></span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact-us-en.html">CONTACT</a></li>
+                    <li>
+                        <a href="index-ar.html" class="lang-toggle" title="Switch to Arabic">
+                            <span>AR</span>
+                            <span>🌐</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="menu-toggle-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         MOBILE MENU DRAWER
+    ══════════════════════════════════════════════════════════════════════ -->
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer" role="dialog" aria-modal="true"
+        aria-label="Mobile navigation">
+        <div class="drawer-backdrop"></div>
+        <div class="drawer-panel">
+            <div class="drawer-head">
+                <img src="assets/image/My-Logo.png" alt="Helzeia" class="drawer-logo-img" />
+                <button class="drawer-close" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="drawer-nav">
+                <a href="index.html">Home</a>
+                <a href="about-us-en.html">About</a>
+                <!-- Services accordion in drawer -->
+                <div class="drawer-services-group">
+                    <button class="drawer-services-toggle" aria-expanded="false">
+                        Services
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="drawer-services-sub">
+                        <a href="programing-en.html">Programing</a>
+                        <a href="mobile-app-en.html">Mobile App</a>
+                        <a href="web-design-en.html">Web Design</a>
+                        <a href="hosting-en.html">Hosting</a>
+                        <a href="mail-support-en.html">Mail Support</a>
+                        <a href="startup-package-en.html">Startup Package</a>
+                        <a href="software-support-en.html">Full IT Support</a>
+                        <a href="remote-app-en.html">Remote App</a>
+                        <a href="hardware-maintenance-en.html">Hardware Maintenance</a>
+                    </div>
+                </div>
+                <a href="contact-us-en.html">Contact</a>
+                <a href="index-ar.html" class="lang-toggle"
+                    style="margin-top: 16px; display: inline-flex; width: fit-content">AR 🌐</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- ══════════════════════════════════════════════════════════════════════
+         HERO SLIDER
+    ══════════════════════════════════════════════════════════════════════ -->
+        <section class="hero-slider-wrapper" id="heroSlider" aria-label="Hero banner">
+            <div class="hero-slide slide-1 active" data-index="0">
+                <!-- الطبقة 1: الخلفية -->
+                <div class="image-layer"></div>
+
+                <!-- الطبقة 2: الصورة الأمامية -->
+                <div class="slide-overlay"></div>
+
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <p class="subtitle">We're the best</p>
+                        <h1>Build Your Consulting<br />Agency Website.</h1>
+                        <p class="desc">
+                            Empowering your business with data-driven strategies and expert guidance. We transform
+                            complex challenges into sustainable growth opportunities
+                        </p>
+                        <div class="hero-link">
+                            <a class="contact-btn" href="#contact">
+                                Contact Us
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="hero-shape-right" src="assets/image/hero-consultant-side-right.png" alt="" />
+                <div class="hero-round"></div>
+            </div>
+
+            <div class="hero-slide slide-2" data-index="1">
+                <div class="image-layer"></div>
+                <div class="slide-overlay"></div>
+
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <p class="subtitle">Our Services</p>
+                        <h1>Explore Superior<br />IT Consulting.</h1>
+                        <p class="desc">
+                            Driving digital evolution through innovative technology and strategic precision. We
+                            streamline your operations to ensure your business stays ahead in a fast-paced world.
+                        </p>
+                        <div class="hero-link">
+                            <a class="contact-btn" href="#contact">
+                                Contact Us
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="hero-shape-right" src="assets/image/hero-consultant-side-right.png" alt=""
+                    onerror="this.style.display = 'none'" />
+                <div class="hero-round" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero-slide slide-3" data-index="2">
+                <div class="image-layer"></div>
+                <div class="slide-overlay"></div>
+
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <p class="subtitle">Why Choose Us</p>
+                        <h1>Transform Your<br />Digital Strategy.</h1>
+                        <p class="desc">
+                            Empowering your brand to thrive in a rapidly evolving digital landscape. We build agile
+                            strategies that turn emerging technologies into your competitive advantage.
+                        </p>
+                        <div class="hero-link">
+                            <a class="contact-btn" href="#contact">
+                                Contact Us
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="hero-shape-right" src="assets/image/hero-consultant-side-right.png" alt=""
+                    onerror="this.style.display = 'none'" />
+                <div class="hero-round" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero-slide slide-4" data-index="3">
+                <div class="image-layer"></div>
+                <div class="slide-overlay"></div>
+
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <p class="subtitle">Our Team</p>
+                        <h1>Meet The Experts<br />Behind The Magic.</h1>
+                        <p class="desc">
+                            A dedicated team of strategists and engineers committed to your success. We combine years of
+                            industry experience with a passion for solving your toughest challenges.
+                        </p>
+                        <div class="hero-link">
+                            <a class="contact-btn" href="#contact">
+                                Contact Us
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="hero-shape-right" src="assets/image/hero-consultant-side-right.png" alt=""
+                    onerror="this.style.display = 'none'" />
+                <div class="hero-round" aria-hidden="true"></div>
+            </div>
+
+            <nav class="owl-nav" aria-label="Slider controls">
+                <button class="nav-btn" id="prevBtn" aria-label="Previous slide">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+                <button class="nav-btn" id="nextBtn" aria-label="Next slide">
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+            </nav>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════════
+         CHATBOT
+    ══════════════════════════════════════════════════════════════════════ -->
+        <section id="chatbot" class="chatbot-hero" aria-labelledby="chatbotHeading">
+            <div class="chatboot">
+                <img src="assets/image/icon/banner-three-aichat.png" alt="" aria-hidden="true" class="bubble-1-img"
+                    width="140" />
+                <img src="assets/image/icon/banner-three-aichat.png" alt="" aria-hidden="true" class="bubble-2-img"
+                    width="140" />
+                <div class="chat-bubble bubble-3" aria-hidden="true">
+                    <img src="assets/image/icon/banner-three-aichat.png" alt="" width="140" />
+                </div>
+                <div class="chat-bubble bubble-4" aria-hidden="true">
+                    <img src="assets/image/icon/banner-three-aichat.png" alt="" width="140" />
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    Your Ultimate Tech Command Center
+                </div>
+
+                <p class="chatbotHeading">
+                    Your One-Stop Hub
+                    <br />for All Tech Needs!
+                </p>
+
+                <p class="subtitle">
+                    Expert care for your computers, printers,laptops, and networks. We
+                    keep your tech running smoothly so you can focus on what matters!
+                </p>
+
+                <div class="cta-group">
+                    <a href="contact-us-en.html" class="btn-primary">
+                        Try Chat
+                        <span class="btn-arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="astronaut-wrap" aria-hidden="true">
+                <img src="assets/image/banner-three-bot.png" alt="" width="auto" height="auto" />
+            </div>
+
+            <div class="cube" aria-hidden="true">
+                <img src="assets/image/banner-three-cube.png" alt="" />
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════════
+     WHO WE ARE
+══════════════════════════════════════════════════════════════════════ -->
+        <section class="wwa-section" id="who-we-are">
+            <div class="container-xl px-4">
+                <div class="row align-items-center gy-5">
+                    <!-- Left: Text -->
+                    <div class="col-12 col-lg-6">
+                        <span class="wwa-eyebrow">Who We Are</span>
+                        <h2 class="wwa-heading">Your Trusted <span>Tech Partners</span></h2>
+                        <p class="wwa-body">
+                            At our core, we believe in the power of technology to enhance lives. We are dedicated to
+                            providing top-notch support for your computers, printers, and networks, ensuring everything
+                            runs seamlessly and efficiently.
+                        </p>
+                    </div>
+                    <!-- Right: Stats -->
+                    <div class="col-12 col-lg-6">
+                        <div class="wwa-stats-grid">
+                            <div class="wwa-stat-card">
+                                <div class="wwa-stat-num">11</div>
+                                <div class="wwa-stat-label">Expert Support</div>
+                            </div>
+                            <div class="wwa-stat-card">
+                                <div class="wwa-stat-num">24/7</div>
+                                <div class="wwa-stat-label">Always Available</div>
+                            </div>
+                            <div class="wwa-stat-card">
+                                <div class="wwa-stat-num">99<sup>%</sup></div>
+                                <div class="wwa-stat-label">Satisfaction Guaranteed</div>
+                            </div>
+                            <div class="wwa-stat-card">
+                                <div class="wwa-stat-num">100<sup>%</sup></div>
+                                <div class="wwa-stat-label">Quality Assurance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════════
+     FEATURES
+══════════════════════════════════════════════════════════════════════ -->
+        <section id="features" class="cfs-section" aria-labelledby="featuresHeading">
+            <div class="container-xl px-4">
+                <div class="cfs-heading-block">
+                    <h2 id="featuresHeading" class="cfs-heading-main">
+                        The Core Features.
+                    </h2>
+                </div>
+
+                <div class="features-wrapper">
+                    <article class="feature-card active" data-index="0">
+                        <div class="icon-box" aria-hidden="true">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 3.5C11.34 3.5 3.5 11.34 3.5 21C3.5 30.66 11.34 38.5 21 38.5C30.66 38.5 38.5 30.66 38.5 21C38.5 11.34 30.66 3.5 21 3.5Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M21 14V21L26.25 26.25" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M7 7L10.5 10.5M35 7L31.5 10.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Proactive Monitoring</h3>
+                        <p class="card-desc">
+                            We identify and resolve issues before they become problems — so your business never stops.
+                        </p>
+                    </article>
+
+                    <article class="feature-card" data-index="1">
+                        <div class="icon-box" aria-hidden="true">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M35 10.5H7C5.62 10.5 4.5 11.62 4.5 13V32C4.5 33.38 5.62 34.5 7 34.5H35C36.38 34.5 37.5 33.38 37.5 32V13C37.5 11.62 36.38 10.5 35 10.5Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M14 10.5V7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M28 10.5V7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M4.5 18.5H37.5" stroke="currentColor" stroke-width="2" />
+                                <path d="M14 25.5H28M21 25.5V30.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Task Activity Management</h3>
+                        <p class="card-desc">
+                            We ensure full visibility and control over all IT tasks through structured tracking and
+                            efficient workflow management.
+                        </p>
+                    </article>
+
+                    <article class="feature-card" data-index="2">
+                        <div class="icon-box" aria-hidden="true">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 3.5L26.5 14.7L39 16.5L30 25.3L32.1 38L21 32.1L9.9 38L12 25.3L3 16.5L15.5 14.7L21 3.5Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M21 10V21L27 27" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Data Security &amp; Backup</h3>
+                        <p class="card-desc">
+                            Protecting your business data with advanced security solutions and reliable backup systems.
+                        </p>
+                    </article>
+
+                    <article class="feature-card" data-index="3">
+                        <div class="icon-box" aria-hidden="true">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 38.5C13.99 38.5 10.48 38.5 8.3 36.19C6.13 33.89 6.13 30.17 6.13 22.75C6.13 15.33 6.13 11.61 8.3 9.31C10.48 7 13.99 7 21 7C28.01 7 31.52 7 33.7 9.31C35.88 11.61 35.88 15.33 35.88 22.75C35.88 30.17 35.88 33.89 33.7 36.19C31.52 38.5 28.01 38.5 21 38.5Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M14 22.75L18.5 27.25L28 17.75" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Customized Solutions</h3>
+                        <p class="card-desc">
+                            Tailored IT strategies that fit your business size, industry, and goals.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════════
+             SIMPLIFIED SOLUTIONS SECTION (Updated: Natural layout, text under each image)
+        ══════════════════════════════════════════════════════════════════════ -->
+        <section class="solutions-section py-5" style="background: var(--bg-primary);">
+            <div class="container-xl px-4">
+                <div class="row g-5 align-items-center justify-content-center">
+                    <!-- Solution 1: Software -->
+                    <div class="col-lg-6 col-md-10 text-center text-lg-start">
+                        <img src="assets/image/Software solution.jpg" alt="Software Solutions"
+                            class="img-fluid rounded-4 shadow-lg mx-auto mx-lg-0 mb-4 mb-lg-4"
+                            style=" height: auto; border: 3px solid var(--blue-primary); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(26,115,232,0.3)'"
+                            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.3)'">
+                        <div>
+                            <h3 class="h3 fw-bold text-primary mb-3"
+                                style="font-family: 'Barlow', sans-serif; font-size: 1.5rem;">
+                                1-Software Solutions
+                            </h3>
+                            <p class="text-light opacity-90 mb-4"
+                                style="font-size: 1.3rem; line-height: 1.85;font-weight: 600;">
+                                We empower businesses to streamline their operations and enhance collaboration through
+                                cutting-edge software solutions. Whether you're managing appointments, hosting virtual
+                                meetings, or optimizing your scheduling, our tools are designed to support your team in
+                                achieving seamless communication and productivity. Discover how our solutions can
+                                simplify your workflows and align with your business goals.
+                            </p>
+                            <p class="fw-semibold text-primary mb-3" style="font-size: 1.3rem;">How to reach your team:
+                            </p>
+                            <ul class="list-unstyled ps-4 mb-0 text-light opacity-85"
+                                style="font-size: 0.95rem; line-height: 1.9; max-width: 480px;">
+                                <li class="mb-2">• Virtual Meetings</li>
+                                <li class="mb-2">• Appointment Scheduler</li>
+                                <li>• Email & Calendar</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Solution 2: Business -->
+                    <div class="col-lg-6 col-md-10 text-center text-lg-start">
+                        <img src="assets/image/business solution.jpg" alt="Business Solutions"
+                            class="img-fluid rounded-4 shadow-lg mx-auto mx-lg-0 mb-4 mb-lg-4"
+                            style=" height: auto; border: 3px solid var(--blue-primary); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(26,115,232,0.3)'"
+                            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.3)'">
+                        <div>
+                            <h3 class="h3 fw-bold text-primary mb-3"
+                                style="font-family: 'Barlow', sans-serif; font-size: 1.5rem;">
+                                2-Business solution
+                            </h3>
+                            <p class="text-light opacity-90 mb-4"
+                                style="font-size: 1.3rem; line-height: 1.85;font-weight: 600;">
+                                Our solutions are designed to reduce costs, increase productivity, and support long-term
+                                growth. We work closely with our clients to ensure seamless implementation and
+                                measurable results. Partner with us to transform your business operations and achieve
+                                sustainable success.
+                            </p>
+                            <p class="text-light opacity-85 mb-0"
+                                style="font-size: 1.3rem; line-height: 1.85;font-weight: 600;">
+                                Our approach focuses on understanding your business challenges and delivering practical,
+                                results-driven strategies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════════════════════ -->
+    <footer class="slyn-footer-wrapper" id="contact" role="contentinfo">
+        <div class="container-fluid px-4 px-md-5">
+            <div class="slyn-layout-row">
+                <div class="slyn-left-col">
+                    <div class="slyn-logo-wrap" aria-hidden="true"></div>
+
+                    <h2 class="slyn-headline">Join the circle.</h2>
+
+                    <a href="#" target="_blank" class="slyn-cta-btn">
+                        <span class="slyn-cta-btn__label">WhatsApp</span>
+                        <span class="slyn-cta-btn__arrow" aria-hidden="true">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="slyn-right-col">
+                    <nav class="slyn-nav-card" aria-label="Footer navigation">
+                        <div class="slyn-nav-grid">
+                            <div class="slyn-nav-col">
+                                <p class="slyn-nav-col__heading">Company</p>
+                                <ul class="slyn-nav-col__list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="contact-us-en.html">Contact-Us</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="slyn-nav-col">
+                                <p class="slyn-nav-col__heading">Links</p>
+                                <ul class="slyn-nav-col__list">
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="about-us-en.html">About Us</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="slyn-nav-col slyn-nav-col--office">
+                                <p class="slyn-nav-col__heading">Our Office</p>
+                                <p class="slyn-office-address">Full address here</p>
+                                <a href="/cdn-cgi/l/email-protection#b7dec3f7dfd2dbcdd2ded699d4d8da"
+                                    class="slyn-office-email"><span class="__cf_email__"
+                                        data-cfemail="email@example.com"><span class="__cf_email__"
+                                            data-cfemail="ddb4a99db5b8b1a7b8b4bcf3beb2b0">
+                                            email@example.com</span></span></a>
+                                <a href="tel:+20XXXXXXXXXX" class="slyn-office-phone">(+20) XXXXXXXXXX</a>
+                                <a href="tel:+03XXXXXXX" class="slyn-office-phone">(+03) XXXXXXX</a>
+                            </div>
+                        </div>
+
+                        <hr class="slyn-card-divider" />
+
+                        <div class="slyn-card-bottom">
+                            <span class="slyn-copyright">
+                                Copyright &copy; <span id="currentYear"></span>
+                                <a href="https://iivtech.com/" target="_blank">IIVTECH | Powered by IIVTECH</a>
+                            </span>
+
+                            <div class="slyn-social-row">
+                                <a href="#" class="slyn-social-btn" target="_blank" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" target="_blank" class="slyn-social-btn" aria-label="Twitter">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="slyn-social-btn" aria-label="whatsapp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="slyn-watermark" aria-hidden="true">Helze<small>i</small>a</div>
+        </div>
+    </footer>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         SCRIPTS
+    ══════════════════════════════════════════════════════════════════════ -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        (function () {
+            "use strict";
+
+            /**
+             * DOM Ready Handler
+             */
+            document.addEventListener("DOMContentLoaded", function () {
+                initNavbarScroll();
+                initCurrentYear();
+                initSmoothScroll();
+            });
+
+            /**
+             * Navbar Scroll Effect
+             * Adds/removes 'scrolled' class based on scroll position
+             */
+            function initNavbarScroll() {
+                var navbar = document.getElementById("main-nav");
+
+                if (!navbar) return;
+
+                function handleScroll() {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                }
+
+                window.addEventListener("scroll", handleScroll);
+                handleScroll();
+            }
+
+            /**
+             * Set Current Year in Footer
+             */
+            function initCurrentYear() {
+                var yearElement = document.getElementById("currentYear");
+
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            }
+
+            /**
+             * Smooth Scroll for Anchor Links
+             */
+            function initSmoothScroll() {
+                var anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+                anchorLinks.forEach(function (link) {
+                    link.addEventListener("click", function (e) {
+                        var targetId = this.getAttribute("href");
+
+                        if (targetId === "#") return;
+
+                        var targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            e.preventDefault();
+
+                            var navbarHeight =
+                                document.getElementById("main-nav").offsetHeight;
+                            var targetPosition =
+                                targetElement.getBoundingClientRect().top +
+                                window.pageYOffset -
+                                navbarHeight;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: "smooth",
+                            });
+                        }
+                    });
+                });
+            }
+            /**
+             * Hide Preloader on page load
+             */
+            window.addEventListener("load", function () {
+                var preloader = document.querySelector(".preloader");
+                if (preloader) {
+                    preloader.style.opacity = "0";
+                    setTimeout(function () {
+                        preloader.style.display = "none";
+                    }, 500);
+                }
+            });
+        })();
+    </script>
+    <script>
+        // Hide preloader on page load
+        window.addEventListener('load', function () {
+            var preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.transition = 'opacity 0.5s ease';
+                setTimeout(function () { preloader.style.display = 'none'; }, 500);
+            }
+        });
+    </script>
+    <!-- Back to Top Button -->
+    <a id="backToTop" href="#" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+</html>

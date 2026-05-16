@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helzeia</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/back-to-top.css">
+  <link rel="stylesheet" href="assets/css/services-contant.css" />
+  <link rel="icon" href="assets/image/My-Logo.png">
+</head>
+
+<body>
+  <!-- ══════════════════════════════════════════════════════════════════════
+         PRELOADER
+    ══════════════════════════════════════════════════════════════════════ -->
+  <div class="preloader" id="preloader">
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-icon">
+        <img src="assets/image/My-Logo.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+         MAIN NAVIGATION
+    ══════════════════════════════════════════════════════════════════════ -->
+  <nav class="header-menu-area" id="main-nav">
+    <div class="nav-inner">
+      <!-- LOGO -->
+      <a class="nav-logo" href="/">
+        <img src="assets/image/My-Logo.png" alt="Helzeia" class="nav-logo__img" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <div class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about-us-en.html">ABOUT</a></li>
+
+          <!-- SERVICES DROPDOWN -->
+          <li class="has-dropdown">
+            <a href="services.html" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+              SERVICES
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </a>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none"><a href="programing-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-code"></i></span><span class="dd-text"><strong>Programing</strong><small>Web &
+                      Desktop
+                      Applications</small></span></a></li>
+              <li role="none"><a href="mobile-app-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-mobile-screen"></i></span><span class="dd-text"><strong>Mobile
+                      App</strong><small>Impactful
+                      applications</small></span></a></li>
+              <li role="none"><a href="web-design-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-pen-nib"></i></span><span class="dd-text"><strong>Web
+                      Design</strong><small>World-class websites</small></span></a></li>
+              <li role="none"><a href="hosting-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-server"></i></span><span
+                    class="dd-text"><strong>Hosting</strong><small>Powerful & high
+                      performance</small></span></a></li>
+              <li role="none"><a href="mail-support-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-envelope"></i></span><span class="dd-text"><strong>Mail
+                      Support</strong><small>Mail hosting & support</small></span></a></li>
+              <li role="none"><a href="startup-package-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-rocket"></i></span><span class="dd-text"><strong>Startup
+                      Package</strong><small>Website, email & hosting</small></span></a></li>
+              <li role="none"><a href="software-support-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-headset"></i></span><span class="dd-text"><strong>Full IT
+                      Support</strong><small>Fast & accurate solutions</small></span></a></li>
+              <li role="none"><a href="remote-app-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-cloud"></i></span><span class="dd-text"><strong>Remote
+                      App</strong><small>Access from anywhere</small></span></a></li>
+              <li role="none"><a href="hardware-maintenance-en.html" role="menuitem"><span class="dd-icon"><i
+                      class="fa-solid fa-screwdriver-wrench"></i></span><span class="dd-text"><strong>Hardware
+                      Maintenance</strong><small>Component repair &
+                      support</small></span></a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact-us-en.html">CONTACT</a></li>
+          <li>
+            <a href="mail-support-ar.html" class="lang-toggle" title="Switch to Arabic">
+              <span>AR</span>
+              <span>🌐</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button class="menu-toggle-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+         MOBILE MENU DRAWER
+    ══════════════════════════════════════════════════════════════════════ -->
+  <div class="mobile-menu-drawer" id="mobileMenuDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <img src="assets/image/My-Logo.png" alt="Helzeia" class="drawer-logo-img" />
+        <button class="drawer-close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html">Home</a>
+        <a href="about-us-en.html">About</a>
+        <!-- Services accordion in drawer -->
+        <div class="drawer-services-group">
+          <button class="drawer-services-toggle" aria-expanded="false">
+            Services
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="drawer-services-sub">
+            <a href="programing-en.html">Programing</a>
+            <a href="mobile-app-en.html">Mobile App</a>
+            <a href="web-design-en.html">Web Design</a>
+            <a href="hosting-en.html">Hosting</a>
+            <a href="mail-support-en.html">Mail Support</a>
+            <a href="startup-package-en.html">Startup Package</a>
+            <a href="software-support-en.html">Full IT Support</a>
+            <a href="remote-app-en.html">Remote App</a>
+            <a href="hardware-maintenance-en.html">Hardware Maintenance</a>
+          </div>
+        </div>
+        <a href="contact-us-en.html">Contact</a>
+        <a href="mail-support-ar.html" class="lang-toggle"
+          style="margin-top: 16px; display: inline-flex; width: fit-content">AR 🌐</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         services-contant
+    ══════════════════════════════════════════════════════════════════════ -->
+    <section class="abx-outer-size">
+      <div class="abx-outer">
+        <div class="abx-row">
+
+          <!-- ══ العمود الأيسر: الصورة ══════════════════════════ -->
+          <div class="abx-col-left">
+
+            <div class="container abx-portrait">
+              <img src="assets/image/7-Mail SUPPORT/01 MAIL SUPPORT-n.jpg" alt="Mail Support"
+                class="abx-portrait-img" />
+            </div>
+          </div>
+
+          <!-- ══ العمود الأيمن: المحتوى ═══════════════════════ -->
+          <div class="abx-col-right">
+
+            <!-- العنوان الضخم يتداخل فوق الصورة -->
+            <div class="abx-heading-wrap">
+              <h1 class="abx-heading">Mail <br> Support</h1>
+            </div>
+
+            <!-- فراغ مرن يدفع المحتوى للأسفل -->
+            <div class="abx-spacer"></div>
+
+            <!-- النص الوصفي -->
+            <div class="abx-body-wrap">
+              <p class="abx-body-text">
+                We provide robust email hosting solutions that ensure your team stays connected,
+                organized, and professional.
+              </p>
+            </div>
+
+          </div>
+          <!-- ══ نهاية العمود الأيمن ════════════════════════════ -->
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ 3-CARD SECTION ═══ -->
+    <section class="hwm-cards-section">
+      <div class="hwm-cards-container">
+        <!-- Card 1 -->
+        <article class="hwm-card">
+          <div class="hwm-card-image">
+            <img src="assets/image/7-Mail SUPPORT/02 MAIL SUPPORT-2.jpg" alt="Professional Mail Hosting" />
+            <div class="hwm-card-img-overlay"></div>
+          </div>
+          <div class="hwm-card-content">
+            <!-- <span class="hwm-card-tag">01 — Hosting</span> -->
+            <h2 class="hwm-card-title">Professional Mail Hosting</h2>
+            <p class="hwm-card-text">In the modern corporate world, email is more than just a communication
+              tool; it is the official record of your business and the primary channel for professional
+              engagement. We provide comprehensive mail support services designed to ensure that your
+              business communication remains secure, uninterrupted, and perfectly synchronized across all
+              your devices. Our solutions focus on establishing a robust and professional messaging
+              infrastructure that reflects the credibility of your brand while maintaining the highest
+              standards of data integrity.</p>
+            <!-- <div class="hwm-card-badge">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <span>Business-Grade Email</span>
+                        </div> -->
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="hwm-card hwm-card--alt">
+          <div class="hwm-card-image">
+            <img src="assets/image/7-Mail SUPPORT/03 MAIL SUPPORT.jpg" alt="Seamless Mail Migration" />
+            <div class="hwm-card-img-overlay"></div>
+          </div>
+          <div class="hwm-card-content">
+            <!-- <span class="hwm-card-tag">02 — Migration</span> -->
+            <h2 class="hwm-card-title">Seamless Mail Migration</h2>
+            <p class="hwm-card-text">Beyond security and stability, we prioritize the seamless integration
+              of your mail systems with your broader business workflow. Our support extends to managing
+              shared environments, archiving critical data for compliance, and providing rapid technical
+              assistance to resolve any connectivity issues. By partnering with us, you gain a managed
+              communication platform that is scalable, highly available, and managed by experts. We take
+              care of the backend technology so that your team can focus on building relationships and
+              driving business results through clear and secure communication.</p>
+            <!-- <div class="hwm-card-badge">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            <span>Zero Downtime Migration</span>
+                        </div> -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════════════════════ -->
+  <footer class="slyn-footer-wrapper" id="contact" role="contentinfo">
+    <div class="container-fluid px-4 px-md-5">
+
+      <div class="slyn-layout-row">
+
+        <div class="slyn-left-col">
+          <div class="slyn-logo-wrap" aria-hidden="true"></div>
+
+          <h2 class="slyn-headline">Join the circle.</h2>
+
+          <a href="#" target="_blank" class="slyn-cta-btn">
+            <span class="slyn-cta-btn__label">WhatsApp</span>
+            <span class="slyn-cta-btn__arrow" aria-hidden="true">
+              <i class="fa-brands fa-whatsapp"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="slyn-right-col">
+          <nav class="slyn-nav-card" aria-label="Footer navigation">
+
+            <div class="slyn-nav-grid">
+
+
+              <div class="slyn-nav-col">
+                <p class="slyn-nav-col__heading">Company</p>
+                <ul class="slyn-nav-col__list">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="contact-us-en.html">Contact-Us</a></li>
+                </ul>
+              </div>
+
+
+              <div class="slyn-nav-col">
+                <p class="slyn-nav-col__heading">Links</p>
+                <ul class="slyn-nav-col__list">
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="about-us-en.html">About Us</a></li>
+                </ul>
+              </div>
+
+
+              <div class="slyn-nav-col slyn-nav-col--office">
+                <p class="slyn-nav-col__heading">Our Office</p>
+                <p class="slyn-office-address">
+                  Full address here
+                </p>
+                <a href="mailto:email@example.com" class="slyn-office-email"><span class="__cf_email__"
+                    data-cfemail="email@example.com">email@example.com</span></a>
+                <a href="tel:+20XXXXXXXXXX" class="slyn-office-phone">(+20) XXXXXXXXXX</a>
+                <a href="tel:+03XXXXXXX" class="slyn-office-phone">(+03) XXXXXXX</a>
+              </div>
+
+            </div>
+
+            <hr class="slyn-card-divider" />
+
+
+            <div class="slyn-card-bottom">
+              <span class="slyn-copyright"> Copyright &copy; <span id="currentYear"></span> <a
+                  href="https://iivtech.com/" target="_blank">IIVTECH |
+                  Powered by
+                  IIVTECH</a> </span>
+
+              <div class="slyn-social-row">
+                <a href="#" class="slyn-social-btn" target="_blank" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="slyn-social-btn" aria-label="Twitter">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" target="_blank" class="slyn-social-btn" aria-label="whatsapp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="slyn-watermark" aria-hidden="true">Helzeia</div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+         SCRIPTS
+    ══════════════════════════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    /**
+* Sea Gull Shipping - Main JavaScript File
+* Handles all interactive functionality
+*/
+
+    (function () {
+      "use strict";
+
+      /**
+       * DOM Ready Handler
+       */
+      document.addEventListener("DOMContentLoaded", function () {
+        initNavbarScroll();
+        initCurrentYear();
+        initSmoothScroll();
+      });
+
+      /**
+       * Navbar Scroll Effect
+       * Adds/removes 'scrolled' class based on scroll position
+       */
+      function initNavbarScroll() {
+        var navbar = document.getElementById("main-nav");
+
+        if (!navbar) return;
+
+        function handleScroll() {
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+      }
+
+      /**
+       * Set Current Year in Footer
+       */
+      function initCurrentYear() {
+        var yearElement = document.getElementById("currentYear");
+
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      }
+
+      /**
+       * Smooth Scroll for Anchor Links
+       */
+      function initSmoothScroll() {
+        var anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+        anchorLinks.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var targetId = this.getAttribute("href");
+
+            if (targetId === "#") return;
+
+            var targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              e.preventDefault();
+
+              var navbarHeight = document.getElementById("main-nav").offsetHeight;
+              var targetPosition =
+                targetElement.getBoundingClientRect().top +
+                window.pageYOffset -
+                navbarHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      }
+    })();
+
+  </script>
+
+  <script>
+    // Hide preloader on page load
+    window.addEventListener('load', function () {
+      var preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(function () { preloader.style.display = 'none'; }, 500);
+      }
+    });
+  </script>
+  <!-- Back to Top Button -->
+  <a id="backToTop" href="#" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
+  <script src="assets/js/back-to-top.js"></script>
+</body>
+
+</html>
