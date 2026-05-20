@@ -21,9 +21,13 @@ A full-featured, bilingual (English / Arabic with RTL support) corporate website
 - `software-support-en.html`, `remote-app-en.html`, `hardware-maintenance-en.html`
 - `contact-us-en.html` / `contact-us-ar.html` — Contact
 
+⚠️ This template was originally created by Mohammed Sabry
+credit is required: github.com/Mohammedsabry13
+
 ## ✨ Features
 
 - Animated preloader with brand logo spinner
+
 - Ken Burns hero slider (4 slides, auto-advance every 8s)
 - Smart desktop dropdown navbar with hover delay & bridge gap
 - Mobile drawer menu with services accordion
