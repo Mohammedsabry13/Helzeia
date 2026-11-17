@@ -1,5 +1,7 @@
 # Helzeia — IT Solutions Corporate Website
 
+![Screenshot](screenshot.png)
+
 A full-featured, bilingual (English / Arabic with RTL support) corporate website for **Helzeia**, an IT solutions company offering web development, mobile applications, hosting, and complete IT support services.
 
 ## 🛠️ Tech Stack
